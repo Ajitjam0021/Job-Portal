@@ -1,0 +1,754 @@
+/* ═══════════════════════════════════════════════
+   Profile Management — Shared Styles
+   ═══════════════════════════════════════════════ */
+
+/* ─── Layout ─────────────────────────────────── */
+.container {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ─── Header ─────────────────────────────────── */
+.header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.avatarWrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border);
+    background: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.avatar:hover {
+    border-color: var(--accent);
+}
+
+.avatarPlaceholder {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 3px dashed var(--border);
+    background: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-foreground);
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.avatarPlaceholder:hover {
+    border-color: var(--accent);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.avatarUploadBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 0;
+}
+
+.avatarUploadBtn:hover {
+    transform: scale(1.1);
+}
+
+.headerInfo {
+    flex: 1;
+    min-width: 200px;
+}
+
+.headerInfo h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.headerInfo p {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    margin-top: 0.2rem;
+}
+
+.headerActions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* ─── Completeness Meter ─────────────────────── */
+.completeness {
+    margin-bottom: 2rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+}
+
+.completenessHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.completenessLabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.completenessScore {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.completenessBar {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--secondary);
+    overflow: hidden;
+}
+
+.completenessFill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.completenessTips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.625rem;
+}
+
+.completenessTip {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-full);
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* ─── Tabs ───────────────────────────────────── */
+.tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.tab {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.tab:hover {
+    color: var(--foreground);
+}
+
+.tabActive {
+    color: var(--foreground);
+    border-bottom-color: var(--foreground);
+    font-weight: 600;
+}
+
+/* ─── Section / Fieldset ─────────────────────── */
+.section {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--surface);
+    transition: box-shadow 0.3s;
+}
+
+.section:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.sectionTitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ─── Form Grid ──────────────────────────────── */
+.formGrid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.formRowThree {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.25rem;
+}
+
+/* ─── Field ──────────────────────────────────── */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    background: var(--background);
+    color: var(--foreground);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+.input:focus {
+    border-color: var(--foreground);
+    box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.inputReadonly {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    background: var(--background);
+    color: var(--foreground);
+    outline: none;
+    font-family: inherit;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.select {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    background: var(--background);
+    color: var(--foreground);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.25rem;
+}
+
+.textarea {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    background: var(--background);
+    color: var(--foreground);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.hint {
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+}
+
+/* ─── Tags / Skills ──────────────────────────── */
+.tagsWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.25rem;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: var(--secondary);
+    color: var(--foreground);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+}
+
+.tagRemove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--muted-foreground);
+    padding: 0;
+    line-height: 1;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.tagRemove:hover {
+    color: #ef4444;
+}
+
+.tagInput {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.85rem;
+    min-width: 120px;
+    flex: 1;
+    color: var(--foreground);
+    font-family: inherit;
+}
+
+/* ─── Structured Entry (Experience / Education) */
+.entry {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    position: relative;
+    background: var(--background);
+    transition: box-shadow 0.2s;
+}
+
+.entry:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.entryRemove {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted-foreground);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.entryRemove:hover {
+    background: #fef2f2;
+    color: #ef4444;
+    border-color: #fca5a5;
+}
+
+.addEntry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--muted-foreground);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.addEntry:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(37, 99, 235, 0.04);
+}
+
+/* ─── Social Links Row ───────────────────────── */
+.socialRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.socialField {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.socialIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-foreground);
+    flex-shrink: 0;
+    font-size: 0.85rem;
+}
+
+/* ─── Upload Area ────────────────────────────── */
+.uploadArea {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--background);
+    position: relative;
+}
+
+.uploadArea:hover {
+    border-color: var(--accent);
+    background: rgba(37, 99, 235, 0.03);
+}
+
+.uploadIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--foreground);
+}
+
+.uploadText {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+}
+
+.uploadTextAccent {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.uploadedFile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.uploadedFileInfo {
+    flex: 1;
+}
+
+.uploadedFileName {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.uploadedFileMeta {
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+}
+
+/* ─── Actions Footer ─────────────────────────── */
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+/* ─── Toast ──────────────────────────────────── */
+.toast {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.toastSuccess {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #34d399;
+    background: rgba(52, 211, 153, 0.1);
+    color: #10b981;
+}
+
+.toastError {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #f87171;
+    background: rgba(248, 113, 113, 0.1);
+    color: #ef4444;
+}
+
+/* ─── Logo Preview ───────────────────────────── */
+.logoPreview {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+/* ─── Public Profile (Enhanced) ─────────────── */
+.publicGrid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+}
+
+.stickySide {
+    position: sticky;
+    top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Hero / Header Card */
+.profileCard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.premiumHero {
+    position: relative;
+    padding: 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.premiumHero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.2), transparent);
+    pointer-events: none;
+}
+
+/* Avatar Glass Effect */
+.glassAvatar {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.sidebarInfo {
+    text-align: center;
+}
+
+/* Summary Grid */
+.summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.statBadge {
+    padding: 0.75rem;
+    background: var(--secondary);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.statValue {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.statLabel {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    letter-spacing: 0.05em;
+}
+
+/* Timeline 2.0 */
+.modernTimeline {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--border);
+    margin-left: 0.5rem;
+}
+
+.timelineNode {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timelineNode::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.25rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: var(--background);
+    border: 2px solid var(--accent);
+    transform: translateX(-50%);
+}
+
+.timelineCard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.timelineCard:hover {
+    transform: translateX(4px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+/* Categorized Skills */
+.skillCategory {
+    margin-bottom: 1.5rem;
+}
+
+.categoryTitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Live Jobs List */
+.liveJobCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 0.75rem;
+    transition: background 0.2s;
+}
+
+.liveJobCard:hover {
+    background: var(--secondary);
+}
+
+/* Responsive Overrides */
+@media (max-width: 900px) {
+    .publicGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .stickySide {
+        position: static;
+    }
+}
